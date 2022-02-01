@@ -60,9 +60,6 @@ bd_QC<-bd_QC[bd_QC$Sex == bd_QC$Genetic_Sex,]
 #nrow(bd_QC) #[1] 425683
 
 #Filter related file by those in QC
-#relatives<-read.table("ukb48818_rel_s488282.dat", header=T)
-
-
 #From maximum_set_of_unrelated_individuals.MF.pl output: 
 max_unrelated<-read.table("/work/kylab/mike/LipidsxVeg/pheno/ukb48818_rel_s488282_output.dat")
 max_unrelated<-as.integer(unlist(max_unrelated))
