@@ -139,7 +139,12 @@ new$SHBG2<-new$SHBG^2
 ###=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 outdir="/scratch/mf91122/LipidsxVeg/pheno"
-participants<-new$IID
+new$FID<-new$IID
+
+new<-new%>%select(FID, everything())
+
+
+participants<-new%>%select(FID,IID)
 
 #Participant list
 write.table(participants, 
@@ -150,7 +155,11 @@ write.table(new,
 	paste(outdir, "/LipidsxVeg_pheno.txt", sep=""),
 	row.names=FALSE, quote=FALSE)
 
+write.csv(new,
+        paste(outdir, "/LipidsxVeg_pheno.csv", sep=""),
+        row.names=FALSE, quote=FALSE)
 
-paste(colnames(new[2:49]), " ", 
-	sapply(new[2:49], mean, na.rm=T), "(", 
-	sapply(new[2:49], sd, na.rm=T), ")", sep="")
+
+paste(colnames(new[3:50]), " ", 
+	sapply(new[3:50], mean, na.rm=T), "(", 
+	sapply(new[3:50], sd, na.rm=T), ")", sep="")
