@@ -1,7 +1,7 @@
 ### MF: This is a script for generating lists of UK Biobank participants which meet QC/filtering criteria.
 source("/work/kylab/mike/TxSmoking/pheno/load_UKBphenotables.R")
 
-
+#PanUKBB load
 pan<-read_tsv("/scratch/mf91122/UKB-pheno/PanUKBB/all_pops_non_eur_pruned_within_pop_pc_covs.tsv")
 pan<-as_tibble(pan)
 pan$s<-as.integer(pan$s)
