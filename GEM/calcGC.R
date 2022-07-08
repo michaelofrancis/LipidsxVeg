@@ -50,3 +50,10 @@ write_tsv(stat,paste(dir1, "/adj/",mod[m], "-", phe[p],
                 col_names=TRUE)
 
 }}}
+
+#Process for FUMA
+x<-read.delim("/scratch/mf91122/LipidsxVeg/GEM/adj/chr2-M2-TAGs-Veg1-adj.tsv", sep="\t", header=F)
+colnames(x)<-c("SNPID", "RSID", "CHR", "POS", "Non_Effect_Allele", "Effect_Allele", "N_Samples", "AF", "N_Veg1_1", "AF_Veg1_1", "N_Veg1_0", "AF_Veg1_0", "Beta_Marginal", "SE_Beta_Marginal", "Beta_G.Veg1", "SE_Beta_G.Veg1", "P_Value_Marginal", "P_Value_Interaction", "P_Value_Joint", "adjP_Value_Interaction", "adjP_Value_Joint", "adjP_Value_Marginal")
+write.table(x, "/scratch/mf91122/LipidsxVeg/GEM/adj/chr2-M2-TAGs-Veg1-adj.txt", fileEncoding="ascii", quote=F, row.names=F)
+
+
